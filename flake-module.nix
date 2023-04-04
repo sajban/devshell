@@ -19,7 +19,8 @@ in
         '';
 
         type = types.lazyAttrsOf (types.submoduleWith {
-          modules = import ./modules/modules.nix { inherit pkgs lib; };
+          specialArgs = { inherit pkgs; };
+          modules = import ./modules/base-modules.nix;
         });
         default = { };
       };
