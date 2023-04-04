@@ -43,6 +43,9 @@
       lib = {
         importTOML = import ./nix/importTOML.nix;
       };
-      flakeModules.default = ./flake-module.nix;
+      flakeModules = {
+        default = ./flake-module.nix;
+        devshell = { imports = [ ./modules/base-modules.nix ]; };
+      };
     };
 }
