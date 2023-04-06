@@ -45,7 +45,7 @@
       };
       flakeModules = {
         default = ./flake-module.nix;
-        devshell = { imports = [ ./modules/base-modules.nix ]; };
+        devshell = { imports = (import ./modules/base-modules.nix); };
       };
     };
 }
